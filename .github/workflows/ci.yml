@@ -6,8 +6,9 @@ jobs:
   CI:
     runs-on: [ubuntu-20.04]
     steps:
+    - name: Setup ros
     - uses: actions/checkout@v3
-    - run: |
+    run: |
     	sudo apt update
     	sudo apt install ros-noetic-core
     	source /opt/ros/noetic/setup.bash
