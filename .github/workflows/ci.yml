@@ -1,14 +1,13 @@
 name: CI
 
-on: push
+on: 
+  push:
+    branches:
+      -main
 
 jobs:
   CI:
     runs-on: ubuntu-20.04
-    strategy:
-    matrix:
-      ros_distro: noetic
-      python-version: 3.8
-      
     steps:
+      - run: echo "Hello world" 
     
