@@ -1,0 +1,13 @@
+name: CI
+
+on: 
+  push:
+    branches:
+      -main
+
+jobs:
+  CI:
+    runs-on: ubuntu-20.04
+    steps:
+      - run: echo "Hello world" 
+    
