@@ -8,8 +8,9 @@ jobs:
     steps:
     - name: Setup ros
     - uses: actions/checkout@v3
-    run: |
-    	sudo apt update
-    	sudo apt install ros-noetic-core
-    	source /opt/ros/noetic/setup.bash
+    with:
+    	run: |
+    		sudo apt update
+    		sudo apt install ros-noetic-core
+    		source /opt/ros/noetic/setup.bash
     
