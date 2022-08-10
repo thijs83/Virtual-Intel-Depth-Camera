@@ -7,9 +7,5 @@ jobs:
     runs-on: [ubuntu-20.04]
     steps:
     - uses: actions/checkout@v3
-    - uses: betwo/github-setup-catkin@v1.1.1
-    with:
-    	ros-version: 'noetic'
-    	workspace: '$GITHUB_WORKSPACE'
-    - run: catkin_make
+    - run: source /opt/ros/noetic/setup.bash
     
