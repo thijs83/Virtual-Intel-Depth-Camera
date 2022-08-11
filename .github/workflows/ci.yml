@@ -6,11 +6,10 @@ on:
     - main
 
 jobs:
-  Build:
-    runs-on: [ubuntu-20.04]
-
+  workflow-command-job:
+    runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-    	  run: |
+      - name: toggle workflow command echoing
+        run: |
           echo "Hello"
           echo "world"
