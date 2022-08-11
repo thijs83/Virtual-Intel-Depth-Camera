@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>realsense_d455</name>
+  <version>1.0.0</version>
+  <description>Realsense camera D455 virtual implementation</description>
+  <maintainer email="thijs_niesten@hotmail.com">Thijs Niesten</maintainer>
+  <license>Apache 2.0</license>
+
+  <author email="sergey.dorodnicov@intel.com">Sergey Dorodnicov</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>gazebo_ros</depend>
+  <depend>roscpp</depend>
+  <depend>sensor_msgs</depend>
+  <depend>image_transport</depend>
+  <depend>camera_info_manager</depend>
+  <exec_depend>xacro</exec_depend>
+
+  <export>
+    <gazebo_ros
+      plugin_path="${prefix}/lib"
+      gazebo_media_path="${prefix}"
+      gazebo_model_path="${prefix}/models"
+      />
+  </export>
+</package>
