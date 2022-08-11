@@ -12,4 +12,4 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Build docker
-        run: cd ros_ws && docker build
+        run: cd Virtual-Intel-Depth-Camera && docker build .
