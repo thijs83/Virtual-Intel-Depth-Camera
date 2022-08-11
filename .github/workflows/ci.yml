@@ -14,8 +14,8 @@ jobs:
 
     - name: Install ROS Noetic
       run: |
-        apt-get update
-         
+        sudo apt-get update
+
 
     - name: Check repository
       run: |
