@@ -9,5 +9,9 @@ jobs:
   Ros_test:
     runs-on: ubuntu-20.04
     steps:
+    - name: Checkout
     - uses: actions/checkout@v2
-    - run: echo "hello"
+
+    - name: Check repository
+      run: cd src
+    
