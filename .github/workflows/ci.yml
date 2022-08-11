@@ -12,6 +12,11 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
 
+    - name: Install ROS Noetic
+      run: |
+        apt-get update
+         
+
     - name: Check repository
       run: |
         cd src
