@@ -6,9 +6,11 @@ on:
     - main
 
 jobs:
-  workflow-command-job:
+  Build:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
+      
       - name: toggle workflow command echoing
         run: |
           echo "Hello"
