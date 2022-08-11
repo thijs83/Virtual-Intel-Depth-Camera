@@ -1,4 +1,4 @@
-name: CI
+name: ROS test
 
 on:
   push:
@@ -6,15 +6,10 @@ on:
     - main
 
 jobs:
-  Build:
-    runs-on: ubuntu-latest
+  Ros_test:
+    runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
 
-      - name: toggle workflow command echoing
-        run: |
-          echo "deb http://packages.ros.org/ros/ubuntu focal main" | sudo tee /etc/apt/sources.list.d/ros-focal.list
-          sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
-          sudo apt update
-          sudo apt install ros-noetic-core
-          source /opt/noetic/setup.bash
+      - name: Build docker
+        run: cd ros_ws && docker build
