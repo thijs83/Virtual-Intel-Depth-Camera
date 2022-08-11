@@ -6,13 +6,11 @@ on:
     - main
 
 jobs:
-  CI:
+  Build:
     runs-on: [ubuntu-20.04]
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v1
-
-      - name: Run echo
-        uses: actions/checkout@v1
-    	  run: echo "Hello"
+    	  run: |
+          echo "Hello"
+          echo "world"
