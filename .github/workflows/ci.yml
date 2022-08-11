@@ -10,6 +10,5 @@ jobs:
     runs-on: [ubuntu-20.04]
 
     steps:
-      - name: Setup ros
-        uses: actions/checkout@v3
-    	  run: echo "Hello"
+      - uses: actions/checkout@v3
+    	- run: echo "Hello"
