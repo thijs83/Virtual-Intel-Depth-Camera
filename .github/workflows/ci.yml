@@ -9,8 +9,10 @@ jobs:
   Ros_test:
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@v2
-
-      - name: Build docker
-        uses: actions/checkout@v2
-        run: cd ${{github.workspace}} && docker build .
+    - uses: ros-tooling/setup-ros@v0.3
+      with:
+        required-ros-distributions: noetic
+    - uses: ros-tooling/action-ros-ci@v0.2
+      with:
+        package-name: my_package
+        target-ros1-distro: noetic
