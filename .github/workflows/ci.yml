@@ -11,7 +11,7 @@ jobs:
 
     steps:
       - name: Setup ros
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
 
       - name: setup environment
     	  run: echo "Hello"
