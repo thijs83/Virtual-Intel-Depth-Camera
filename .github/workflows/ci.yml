@@ -19,8 +19,6 @@ jobs:
 
     - name: Source workspace
       shell: bash
-      run: |
-        source /opt/ros/noetic/setup.bash
-        ls
+      run: ls
 
     
