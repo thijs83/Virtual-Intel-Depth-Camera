@@ -45,6 +45,7 @@ jobs:
         run: |
           source /opt/ros/noetic/setup.bash
           catkin_init_workspace /ros/src
+          cd /ros
           catkin_make -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
     
     - name: Check Python Format
