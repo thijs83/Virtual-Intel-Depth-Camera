@@ -61,16 +61,6 @@ jobs:
           echo "check files in directory !!!!!!!!!!!!!!!"
           cd ..
           ls
-
-    - name: Check C++ Format
-      uses: addnab/docker-run-action@v3
-      with:
-        image:    ros_test
-        options:  -v ${{github.workspace}}:/ros
-        shell:    bash
-        run: |
-          source /ros/devel/setup.bash
-          cmake --build /ros/build --target check-format
     
     - name: Check Python Format
       uses: addnab/docker-run-action@v3
