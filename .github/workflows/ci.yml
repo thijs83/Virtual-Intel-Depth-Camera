@@ -65,7 +65,7 @@ jobs:
     - name: Source workspace
       shell: bash
       run: |
-      echo "check files in directory !!!!!!!!!!!!!!!"
+        echo "check files in directory !!!!!!!!!!!!!!!"
         cd src
         ls
         cd ..
