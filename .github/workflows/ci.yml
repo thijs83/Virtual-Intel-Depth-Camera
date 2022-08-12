@@ -20,7 +20,6 @@ jobs:
     - name: Source workspace
       uses: addnab/docker-run-action@v3
       with:
-        image: Virtual-Intel-Depth-Camera
         shell: bash
         run: |
           /opt/ros/noetic/setup.bash
