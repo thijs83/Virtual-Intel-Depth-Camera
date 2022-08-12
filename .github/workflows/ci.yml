@@ -15,10 +15,13 @@ jobs:
     - name: Build Docker Image
       uses: docker/build-push-action@v3
       with:
-        file: .github/workflows/Dockerfile
+        # use tags if multiple images are running in parallel
+        file: .github/workflows/Dockerfile 
 
     - name: Source workspace
       shell: bash
-      run: ls
+      run: |
+        cd src
+        ls
 
     
