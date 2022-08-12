@@ -17,12 +17,13 @@ jobs:
         mkdir -p ${{github.workspace}}/devel     # compilation cache for formatter & linter
 
     - name: Checkout
+      # Get the github code repository
       uses: actions/checkout@v2
 
     - name: Build Docker Image
+      # Build docker with ros environment
       uses: docker/build-push-action@v3
       with:
-        # use tags if multiple images are running in parallel
         tags: ros_test
         file: .github/workflows/Dockerfile 
 
@@ -34,6 +35,21 @@ jobs:
         run: |
           catkin config --workspace /ros/ --init --extend /opt/ros/noetic --cmake-args -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
           catkin build --workspace /ros/ --interleave-output --verbose
+          ls
+
+    - name: Compile with Catkin Make
+      uses: addnab/docker-run-action@v3
+      with:
+        image:    ros_test
+        options:  -v ${{github.workspace}}:/ros
+        shell:    bash
+        run: |
+          source /opt/ros/noetic/setup.bash
+          catkin_init_workspace /ros/src
+          cd /ros
+          catkin_make -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
+          ls
+          cd ..
           ls
 
     - name: Source workspace
