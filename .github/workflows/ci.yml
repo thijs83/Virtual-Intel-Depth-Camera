@@ -17,4 +17,7 @@ jobs:
       with:
         file: .github/workflows/Dockerfile
 
+    - name: Source workspace
+      run: /opt/ros/noetic/setup.bash
+
     
