@@ -18,6 +18,12 @@ jobs:
         file: .github/workflows/Dockerfile
 
     - name: Source workspace
-      run: /opt/ros/noetic/setup.bash
+      uses: addnab/docker-run-action@v3
+      with:
+        image: Virtual-Intel-Depth-Camera
+        shell: bash
+        run: |
+          /opt/ros/noetic/setup.bash
+          ls
 
     
