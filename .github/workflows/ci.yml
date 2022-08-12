@@ -15,8 +15,8 @@ jobs:
     - name: Install ROS Noetic
       shell: bash
       run: |
-        apt-get update
-        apt-get -y install python3-catkin-tools
+        sudo apt-get update
+        sudo apt-get -y install python3-catkin-tools
 
 
     - name: Check repository
