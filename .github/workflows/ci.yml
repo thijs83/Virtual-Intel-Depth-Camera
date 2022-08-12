@@ -18,11 +18,9 @@ jobs:
         file: .github/workflows/Dockerfile
 
     - name: Source workspace
-      uses: addnab/docker-run-action@v3
-      with:
-        shell: bash
-        run: |
-          /opt/ros/noetic/setup.bash
-          ls
+      shell: bash
+      run: |
+        /opt/ros/noetic/setup.bash
+        ls
 
     
