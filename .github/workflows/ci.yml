@@ -31,15 +31,10 @@ jobs:
       uses: addnab/docker-run-action@v3
       with:
         image: ros_test
-        options:  -v ${{github.workspace}}/src:/ros/src/  # only mount source here
+        options:  -v ${{github.workspace}}/src:/ros/src/
         run: |
           catkin config --workspace /ros/ --init --extend /opt/ros/noetic --cmake-args -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
           catkin build --workspace /ros/ --interleave-output --verbose
-          echo "check files in directory !!!!!!!!!!!!!!!"
-          ls
-          echo "check files in directory !!!!!!!!!!!!!!!"
-          cd ros
-          ls
 
     - name: Compile with Catkin Make
       uses: addnab/docker-run-action@v3
@@ -50,17 +45,7 @@ jobs:
         run: |
           source /opt/ros/noetic/setup.bash
           catkin_init_workspace /ros/src
-          echo "check files in directory !!!!!!!!!!!!!!!"
-          ls
-          cd /ros
-          echo "check files in directory !!!!!!!!!!!!!!!"
-          ls
           catkin_make -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
-          echo "check files in directory !!!!!!!!!!!!!!!"
-          ls
-          echo "check files in directory !!!!!!!!!!!!!!!"
-          cd ..
-          ls
     
     - name: Check Python Format
       uses: addnab/docker-run-action@v3
