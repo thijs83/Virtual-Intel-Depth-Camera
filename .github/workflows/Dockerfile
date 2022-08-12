@@ -1,6 +1,3 @@
-FROM ros:noetic
+FROM osrf/ros:noetic-desktop-focal
 
-RUN apt-get update
-RUN bash source /opt/devel/setup.bash
-COPY . /ros_ws
-WORKDIR /ros_ws
+RUN apt-get update -y && apt-get install -y python3-catkin-tools
