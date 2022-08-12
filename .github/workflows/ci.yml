@@ -9,6 +9,13 @@ jobs:
   Ros_test:
     runs-on: ubuntu-20.04
     steps:
+      - name: Prepare
+      # Keep the compilation outputs persitant outside the docker container to use for the other steps
+      run: |
+        mkdir -p ${{github.workspace}}/src       # where the repo will be cloned into
+        mkdir -p ${{github.workspace}}/build     # compilation cache for formatter & linter
+        mkdir -p ${{github.workspace}}/devel     # compilation cache for formatter & linter
+
     - name: Checkout
       uses: actions/checkout@v2
 
@@ -16,15 +23,18 @@ jobs:
       uses: docker/build-push-action@v3
       with:
         # use tags if multiple images are running in parallel
+        tags: ros_test
         file: .github/workflows/Dockerfile 
 
     - name: Compile with Catkin Tools
       uses: addnab/docker-run-action@v3
       with:
+        image: ros_test
         options:  -v ${{github.workspace}}/src:/ros/src/  # only mount source here
         run: |
           catkin config --workspace /ros/ --init --extend /opt/ros/noetic --cmake-args -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
           catkin build --workspace /ros/ --interleave-output --verbose
+          ls
 
     - name: Source workspace
       shell: bash
