@@ -9,7 +9,7 @@ jobs:
   Ros_test:
     runs-on: ubuntu-20.04
     steps:
-      - name: Prepare
+    - name: Prepare
       # Keep the compilation outputs persitant outside the docker container to use for the other steps
       run: |
         mkdir -p ${{github.workspace}}/src       # where the repo will be cloned into
