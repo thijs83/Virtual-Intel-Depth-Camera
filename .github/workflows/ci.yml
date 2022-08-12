@@ -19,12 +19,12 @@ jobs:
         file: .github/workflows/Dockerfile 
 
     - name: Compile with Catkin Tools
-          uses: addnab/docker-run-action@v3
-          with:
-            options:  -v ${{github.workspace}}/src:/ros/src/  # only mount source here
-            run: |
-              catkin config --workspace /ros/ --init --extend /opt/ros/noetic --cmake-args -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
-              catkin build --workspace /ros/ --interleave-output --verbose
+      uses: addnab/docker-run-action@v3
+      with:
+        options:  -v ${{github.workspace}}/src:/ros/src/  # only mount source here
+        run: |
+          catkin config --workspace /ros/ --init --extend /opt/ros/noetic --cmake-args -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
+          catkin build --workspace /ros/ --interleave-output --verbose
 
     - name: Source workspace
       shell: bash
