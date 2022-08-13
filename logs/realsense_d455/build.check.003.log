@@ -1,4 +1,3 @@
-Not searching for unused variables given on the command line.
 CMake Warning (dev) at CMakeLists.txt:2 (project):
   Policy CMP0048 is not set: project() command manages VERSION variables.
   Run "cmake --help-policy CMP0048" for policy details.  Use the cmake_policy
@@ -83,6 +82,14 @@ This warning is for project developers.  Use -Wno-dev to suppress it.
 [36m--[0m Looking for ignition-common3 -- found version 3.14.0
 [36m--[0m Looking for ignition-math6 -- found version 6.10.0
 [36m--[0m Looking for ignition-msgs5 -- found version 5.9.0
+[33m[1mCMake Warning[0m at /home/thijs/TU_test/Virtual-Intel-Depth-Camera/src/cmake/ClangTools.cmake:11 (message):
+  Invoke Catkin/CMake with '-DCMAKE_EXPORT_COMPILE_COMMANDS=ON'
+
+                       to generate compilation database for 'clang-tidy'.
+[36mCall Stack (most recent call first):[0m
+  CMakeLists.txt:62 (include)
+
+
 [36m--[0m Configuring done
 [36m--[0m Generating done
 [36m--[0m Build files have been written to: /home/thijs/TU_test/Virtual-Intel-Depth-Camera/build/realsense_d455
