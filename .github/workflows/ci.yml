@@ -47,7 +47,10 @@ jobs:
           catkin_init_workspace /ros/src
           cd /ros
           catkin_make -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
-    
+          
+    - name: Python Style Checker
+      uses: andymckay/pycodestyle-action@0.1.3
+
     - name: Check Python Format
       uses: addnab/docker-run-action@v3
       with:
