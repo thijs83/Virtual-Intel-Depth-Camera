@@ -12,7 +12,6 @@ jobs:
     - name: Prepare
       # Keep the compilation outputs persitant outside the docker container to use for the other steps
       run: |
-        mkdir -p ${{github.workspace}}/src       # where the repo will be cloned into
         mkdir -p ${{github.workspace}}/build     # compilation cache for formatter & linter
         mkdir -p ${{github.workspace}}/devel     # compilation cache for formatter & linter
 
@@ -46,21 +45,6 @@ jobs:
           source /opt/ros/noetic/setup.bash
           cd /ros
           catkin_make -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
-
-    - name: Check C++ Format
-      uses: addnab/docker-run-action@v3
-      with:
-        image:    ros_test
-        options:  -v ${{github.workspace}}:/ros
-        shell:    bash
-        run: |
-          source /ros/devel/setup.bash
-          cd /ros/build
-          echo "files and folders"
-          ls
-          cd ..
-          cd ..
-          cmake --build /ros/build --target check-format
 
     - name: Check Linting
       uses: addnab/docker-run-action@v3
