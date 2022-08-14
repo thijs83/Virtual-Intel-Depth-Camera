@@ -9,12 +9,6 @@ jobs:
   Ros_test:
     runs-on: ubuntu-20.04
     steps:
-    - name: Prepare
-      # Keep the compilation outputs persitant outside the docker container to use for the other steps
-      run: |
-        mkdir -p ${{github.workspace}}/build     # compilation cache for formatter & linter
-        mkdir -p ${{github.workspace}}/devel     # compilation cache for formatter & linter
-
     - name: Checkout
       # Get the github code repository
       uses: actions/checkout@v2

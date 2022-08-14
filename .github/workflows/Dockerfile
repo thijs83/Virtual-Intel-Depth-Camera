@@ -8,4 +8,5 @@ RUN apt-get update -y && apt-get install -y \
     clang-7 \
     clang-format-7 \
     clang-tidy-7 \
-    pycodestyle 
+    pycodestyle \
+    ros-noetic-pcl-ros
