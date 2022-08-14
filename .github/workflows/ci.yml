@@ -44,7 +44,6 @@ jobs:
         shell:    bash
         run: |
           source /opt/ros/noetic/setup.bash
-          catkin_init_workspace /ros/src
           cd /ros
           catkin_make -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
 
@@ -56,6 +55,11 @@ jobs:
         shell:    bash
         run: |
           source /ros/devel/setup.bash
+          cd /ros/build
+          echo "files and folders"
+          ls
+          cd ..
+          cd ..
           cmake --build /ros/build --target check-format
 
     - name: Check Linting
@@ -67,15 +71,5 @@ jobs:
         run: |
           source /ros/devel/setup.bash
           cmake --build /ros/build --target check-tidy
-
-    - name: Source workspace
-      shell: bash
-      run: |
-        echo "check files in directory !!!!!!!!!!!!!!!"
-        cd src
-        ls
-        cd ..
-        echo "check files in directory !!!!!!!!!!!!!!!"
-        ls
 
     
