@@ -1,13 +1,9 @@
-= Virtual-Intel-Depth-Camera
-:toc:
-:toc-placement!:
-
-toc::[]
-
 # Introduction
 
 This example shows the implementation of a Intel Realsense D455 camera inside a simple virtual world made in Gazebo. The camera publishes it's pointcloud and image to ROS. One C++ example node detects objects in the pointcloud and publishes these as markers. Another Python example node detects the orange cones in the images and marks these in the image that is published by the node. This image, together with the pointcloud and the marker detections is visualized in Rviz. 
 
+Virtual environment in Gazebo
+:-----------------------------:
 ![](images/gazebo.png)
 
 
@@ -18,15 +14,6 @@ Pointcloud             |  Image
 
 
 
-The files included in this example are:
-
-```
-$ tree
-.
-    .src
-    .src
-```
-
 # Requirements
 
 This example is made using ROS Noetic and there is no garuantee that it works with other distributions. Both OpenCV and PCL libraries are needed for the detection nodes.  
@@ -36,17 +23,21 @@ This example is made using ROS Noetic and there is no garuantee that it works wi
 # Install
 
 To install the packages follow:
-[source,bash]
-----
+```bash
 $ mkdir catkin_ws
 $ cd catkin_ws
 $ git clone https://github.com/thijs83/Virtual-Intel-Depth-Camera.git
 $ catkin_make
-----
+```
 
 
 # Get started
 
+To launch the whole setup:
+
+```bash
+$ roslaunch realsense_d455 test_environment.launch
+```
 
 # Packages
 
@@ -59,3 +50,5 @@ This package contains all models to setup the virtual environment and publishing
 This package contains an example pointcloud filter in c++ that detects objects in the pointcloud retrieved from the camera.
 
 ## image_filter 
+
+This package contains an image filter example using a python script. 
