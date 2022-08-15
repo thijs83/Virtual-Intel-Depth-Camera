@@ -8,9 +8,12 @@ toc::[]
 
 This example shows the implementation of a Intel Realsense D455 camera inside a simple virtual world made in Gazebo. The camera publishes it's pointcloud and image to ROS. One C++ example node detects objects in the pointcloud and publishes these as markers. Another Python example node detects the orange cones in the images and marks these in the image that is published by the node. This image, together with the pointcloud and the marker detections is visualized in Rviz. 
 
-Gazebo             |  Rviz
+![](images/gazebo.png)
+
+
+Pointcloud             |  Image
 :-------------------------:|:-------------------------:
-![](.. image:: screenshot_gazebo.png)  |  ![](.. image:: screenshot_rviz.png)
+![](images/rviz_pointcloud.png)  |  ![](images/rviz_image.png)
 
 
 
@@ -22,6 +25,7 @@ $ tree
 .
     .src
     .src
+```
 
 # Requirements
 

@@ -1,0 +1,21 @@
+<launch>
+  <!-- Launch the virtual environment with the camera and display output in Rviz -->
+  <include 
+	file="$(find realsense_d455)/launch/view_d455_model_rviz_gazebo.launch">
+  </include>
+  
+  <!-- launch the pointcloud object detection  -->
+  <node
+	pkg="pointcloud_filter"
+	type="pointcloud_filter_node"
+	name="pointcloud_filter_node" >
+  </node>
+  
+  <!-- launch the orange cone detection for images -->
+  <node
+	pkg="image_filter"
+	type="image_filter.py"
+	name="image_filter_node" >
+  </node>  
+  
+</launch>
