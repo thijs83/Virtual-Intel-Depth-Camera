@@ -1,6 +1,0 @@
-realsense_d455
-/home/thijs/TU_test/Virtual-Intel-Depth-Camera/devel/.private/realsense_d455/cmake.lock /home/thijs/TU_test/Virtual-Intel-Depth-Camera/devel/./cmake.lock
-/home/thijs/TU_test/Virtual-Intel-Depth-Camera/devel/.private/realsense_d455/share/realsense_d455/cmake/realsense_d455Config.cmake /home/thijs/TU_test/Virtual-Intel-Depth-Camera/devel/share/realsense_d455/cmake/realsense_d455Config.cmake
-/home/thijs/TU_test/Virtual-Intel-Depth-Camera/devel/.private/realsense_d455/share/realsense_d455/cmake/realsense_d455Config-version.cmake /home/thijs/TU_test/Virtual-Intel-Depth-Camera/devel/share/realsense_d455/cmake/realsense_d455Config-version.cmake
-/home/thijs/TU_test/Virtual-Intel-Depth-Camera/devel/.private/realsense_d455/lib/librealsense_d455.so /home/thijs/TU_test/Virtual-Intel-Depth-Camera/devel/lib/librealsense_d455.so
-/home/thijs/TU_test/Virtual-Intel-Depth-Camera/devel/.private/realsense_d455/lib/pkgconfig/realsense_d455.pc /home/thijs/TU_test/Virtual-Intel-Depth-Camera/devel/lib/pkgconfig/realsense_d455.pc

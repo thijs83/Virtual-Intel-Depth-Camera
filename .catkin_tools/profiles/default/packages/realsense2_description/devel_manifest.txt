@@ -1,5 +1,0 @@
-realsense2_description
-/home/thijs/TU_test/Virtual-Intel-Depth-Camera/devel/.private/realsense2_description/cmake.lock /home/thijs/TU_test/Virtual-Intel-Depth-Camera/devel/./cmake.lock
-/home/thijs/TU_test/Virtual-Intel-Depth-Camera/devel/.private/realsense2_description/share/realsense2_description/cmake/realsense2_descriptionConfig.cmake /home/thijs/TU_test/Virtual-Intel-Depth-Camera/devel/share/realsense2_description/cmake/realsense2_descriptionConfig.cmake
-/home/thijs/TU_test/Virtual-Intel-Depth-Camera/devel/.private/realsense2_description/share/realsense2_description/cmake/realsense2_descriptionConfig-version.cmake /home/thijs/TU_test/Virtual-Intel-Depth-Camera/devel/share/realsense2_description/cmake/realsense2_descriptionConfig-version.cmake
-/home/thijs/TU_test/Virtual-Intel-Depth-Camera/devel/.private/realsense2_description/lib/pkgconfig/realsense2_description.pc /home/thijs/TU_test/Virtual-Intel-Depth-Camera/devel/lib/pkgconfig/realsense2_description.pc
