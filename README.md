@@ -55,3 +55,9 @@ This package contains an example pointcloud filter in c++ that detects objects i
 ## image_filter 
 
 This package contains an image filter example using a python script. The filter searches for the colors of the cone (white/orange) and then adds a contour around the detections 
+
+# References
+
+Two main github repositories are used to implement the virtual D455 camera:
+[pal-robotics/realsense_gazebo_plugin](https://github.com/pal-robotics/realsense_gazebo_plugin)
+[IntelRealSense/realsense-ros](https://github.com/IntelRealSense/realsense-ros)
