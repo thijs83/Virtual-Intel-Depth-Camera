@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 
-import rospy
 import cv2
 import numpy as np
+import rospy
 from cv_bridge import CvBridge, CvBridgeError
 from sensor_msgs.msg import Image
 
@@ -61,4 +61,3 @@ if __name__ == '__main__':
         rospy.spin()
     except KeyboardInterrupt:
         print("Shutting down")
-    cv2.destroyAllWindows()

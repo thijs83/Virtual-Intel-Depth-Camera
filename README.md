@@ -16,7 +16,7 @@ Pointcloud             |  Image
 
 # Requirements
 
-This example is made using ROS Noetic and there is no garuantee that it works with other distributions. Both OpenCV and PCL libraries are needed for the detection nodes.  
+This example is made using ROS Noetic on Ubuntu 20.04 and there is no garuantee that it works with other distributions. Both OpenCV and PCL libraries are needed for the detection nodes.  
 
 
 

@@ -1,29 +1,18 @@
-
-#include <pcl/common/centroid.h>
-#include <pcl/common/geometry.h>
 #include <pcl/common/transforms.h>
-#include <pcl/features/normal_3d.h>
 #include <pcl/filters/extract_indices.h>
 #include <pcl/filters/voxel_grid.h>
-#include <pcl/io/pcd_io.h>
 #include <pcl/kdtree/kdtree.h>
 #include <pcl/point_cloud.h>
 #include <pcl/point_types.h>
 #include <pcl/segmentation/extract_clusters.h>
-#include <pcl/segmentation/sac_segmentation.h>
 #include <pcl_conversions/pcl_conversions.h>
+#include <pcl_ros/point_cloud.h>
 #include <ros/ros.h>
 #include <sensor_msgs/PointCloud2.h>
-#include <algorithm>
-#include <fstream>
-#include <iostream>
-#include <iterator>
-#include "pcl_ros/point_cloud.h"
-
 #include <visualization_msgs/Marker.h>
 #include <visualization_msgs/MarkerArray.h>
-#include <limits>
-#include <utility>
+#include <iostream>
+#include <iterator>
 
 using namespace std;
 ros::Publisher markerPub;
@@ -50,7 +39,7 @@ void cloud_cb(const sensor_msgs::PointCloud2ConstPtr& input) {
   sor.setLeafSize(0.03f, 0.03f, 0.03f);
   sor.filter(*input_cloud);
 
-  // Filter out the ground floor
+  // Filter out the ground floor (can also be done with pcl::SAC_RANSAC)
   pcl::PointIndices::Ptr inliers(new pcl::PointIndices());
   pcl::ExtractIndices<pcl::PointXYZ> extract;
   for (int i = 0; i < (*input_cloud).size(); i++) {

@@ -50,7 +50,7 @@ jobs:
           source /ros/devel/setup.bash
           cmake --build /ros/build --target check-format
     
-    - name: Check Python Format
+    - name: Check Python Format (pycodestyle is a formatter and linter)
       uses: addnab/docker-run-action@v3
       with:
         image:    ros_test
