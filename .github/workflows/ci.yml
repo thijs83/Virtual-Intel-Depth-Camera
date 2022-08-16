@@ -39,6 +39,12 @@ jobs:
           source /opt/ros/noetic/setup.bash
           cd /ros
           catkin_make -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
+    
+    - name: Run clang-format style check for C/C++/Protobuf programs.
+      uses: jidicula/clang-format-action@v4.8.0
+      with:
+        clang-format-version: '13'
+        check-path: 'src'
 
     - name: Check Linting
       uses: addnab/docker-run-action@v3
