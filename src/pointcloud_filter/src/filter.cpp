@@ -33,8 +33,6 @@ ros::Publisher Pub;
 // Subscriber callback for the incoming pointcloud
 void cloud_cb(const sensor_msgs::PointCloud2ConstPtr &input)
 {
-	
-	
 	// convert pointcloud from message to pcl
 	pcl::PointCloud<pcl::PointXYZ>::Ptr input1_cloud(new pcl::PointCloud<pcl::PointXYZ>);
 	pcl::PointCloud<pcl::PointXYZ>::Ptr transform_cloud(new pcl::PointCloud<pcl::PointXYZ>);
@@ -71,7 +69,6 @@ void cloud_cb(const sensor_msgs::PointCloud2ConstPtr &input)
 	extract.setNegative(true);
 	extract.filter(*input_cloud);
 	
-	
 	// Creating the KdTree from input point cloud
 	pcl::search::KdTree<pcl::PointXYZ>::Ptr tree(new pcl::search::KdTree<pcl::PointXYZ>);
 	tree->setInputCloud(input_cloud);
@@ -101,6 +98,7 @@ void cloud_cb(const sensor_msgs::PointCloud2ConstPtr &input)
 	int i = 0;
 	for (it = cluster_indices.begin(); it != cluster_indices.end(); ++it) 
 	{
+		// Run through the points in the cluster
 		pcl::PointCloud<pcl::PointXYZ>::Ptr cloud_cluster(new pcl::PointCloud<pcl::PointXYZ>);
 		float x = 0.0;
 		float y = 0.0;
@@ -115,7 +113,7 @@ void cloud_cb(const sensor_msgs::PointCloud2ConstPtr &input)
 		numPts++;
 		}
 
-		// Create the marker for the object
+		// Create the marker for the object and store the center
 		visualization_msgs::Marker m;
 		m.id = i;
 		i++;
@@ -133,22 +131,13 @@ void cloud_cb(const sensor_msgs::PointCloud2ConstPtr &input)
 		m.scale.y = 0.2;
 		m.scale.z = 0.2;
 
+		// Store the marker in the array
 		clusterMarkers.markers.push_back(m);
 		
 	}
 
 	// Publish the markers for the objects
-	markerPub.publish(clusterMarkers);
-	
-	/*
-	// For debugging purposes
-	sensor_msgs::PointCloud2::Ptr clustermsg(new sensor_msgs::PointCloud2);
-	pcl::toROSMsg(*input_cloud, *clustermsg);
-	clustermsg->header.frame_id = "base_link";
-	clustermsg->header.stamp = ros::Time::now();
-	Pub.publish(clustermsg);
-	*/
-	
+	markerPub.publish(clusterMarkers);	
 }
 
 
@@ -163,9 +152,6 @@ int main(int argc, char **argv) {
 	markerPub = nh.advertise<visualization_msgs::MarkerArray>("filtered_markers", 1);
 	// Create a ROS subscriber for the input point cloud
 	ros::Subscriber sub = nh.subscribe("camera/depth/color/points", 1, cloud_cb);
-
-	// For debugging the pointcloud
-	Pub = nh.advertise<sensor_msgs::PointCloud2>("cloud_filtered",1);
 
 	ros::spin();
 }

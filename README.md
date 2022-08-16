@@ -24,10 +24,10 @@ This example is made using ROS Noetic and there is no garuantee that it works wi
 
 To install the packages follow:
 ```bash
-$ mkdir catkin_ws
-$ cd catkin_ws
-$ git clone https://github.com/thijs83/Virtual-Intel-Depth-Camera.git
-$ catkin_make
+mkdir catkin_ws
+cd catkin_ws
+git clone https://github.com/thijs83/Virtual-Intel-Depth-Camera.git
+catkin_make
 ```
 
 
@@ -36,8 +36,8 @@ $ catkin_make
 To launch the whole setup:
 
 ```bash
-$ source devel/setup.bash
-$ roslaunch realsense_d455 test_environment.launch
+source devel/setup.bash
+roslaunch realsense_d455 test_environment.launch
 ```
 
 This will launch Gazebo and Rviz, and it will start the python and c++ node.
@@ -54,4 +54,4 @@ This package contains an example pointcloud filter in c++ that detects objects i
 
 ## image_filter 
 
-This package contains an image filter example using a python script. 
+This package contains an image filter example using a python script. The filter searches for the colors of the cone (white/orange) and then adds a contour around the detections 
