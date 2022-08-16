@@ -11,6 +11,11 @@ include_directories(
   ${catkin_INCLUDE_DIRS}
 )
 
+catkin_package(
+  LIBRARIES pointcloud_filter
+  CATKIN_DEPENDS roscpp visualization_msgs pcl_ros
+)
+
 add_executable(${PROJECT_NAME}_node src/filter.cpp)
 target_link_libraries(${PROJECT_NAME}_node
   ${catkin_LIBRARIES}
