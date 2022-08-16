@@ -27,6 +27,7 @@ To install the packages follow:
 mkdir catkin_ws
 cd catkin_ws
 git clone https://github.com/thijs83/Virtual-Intel-Depth-Camera.git
+cd Virtual-Intel-Depth-Camera/
 catkin_make
 ```
 
