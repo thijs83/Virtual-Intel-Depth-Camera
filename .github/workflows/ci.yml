@@ -40,6 +40,16 @@ jobs:
           cd /ros
           catkin_make -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
 
+    - name: Check c++ Format
+      uses: addnab/docker-run-action@v3
+      with:
+        image:    ros_test
+        options:  -v ${{github.workspace}}:/ros
+        shell:    bash
+        run: |
+          source /ros/devel/setup.bash
+          cmake --build /ros/build --target check-format
+    
     - name: Check Python Format
       uses: addnab/docker-run-action@v3
       with:
