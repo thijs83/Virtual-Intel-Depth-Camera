@@ -26,3 +26,10 @@ catkin_install_python(PROGRAMS
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
+include(${CMAKE_CURRENT_LIST_DIR}/../cmake/PepTools.cmake OPTIONAL
+  RESULT_VARIABLE PEP_TOOLS
+)
+if(PEP_TOOLS)
+  file(GLOB_RECURSE PYSOURCES ${CMAKE_CURRENT_SOURCE_DIR}/scripts/*.py)
+  add_pyformat_target(image_filter FILES ${PYSOURCES})
+endif()

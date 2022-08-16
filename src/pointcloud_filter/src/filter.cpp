@@ -28,7 +28,6 @@
 
 using namespace std;
 ros::Publisher markerPub;
-ros::Publisher Pub;
 
 // Subscriber callback for the incoming pointcloud
 void cloud_cb(const sensor_msgs::PointCloud2ConstPtr &input)
