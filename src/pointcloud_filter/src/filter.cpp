@@ -5,7 +5,6 @@
 #include <iostream>
 #include <iterator>
 #include <pcl/io/pcd_io.h>
-#include <pcl/point_types.h>
 #include <ros/ros.h>
 #include <pcl/common/centroid.h>
 #include <pcl/common/geometry.h>
@@ -20,7 +19,6 @@
 #include <pcl/segmentation/sac_segmentation.h>
 #include <pcl_conversions/pcl_conversions.h>
 #include <sensor_msgs/PointCloud2.h>
-#include <pcl/filters/voxel_grid.h>
 
 #include <limits>
 #include <utility>

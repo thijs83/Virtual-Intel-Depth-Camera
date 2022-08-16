@@ -36,8 +36,11 @@ $ catkin_make
 To launch the whole setup:
 
 ```bash
+$ source devel/setup.bash
 $ roslaunch realsense_d455 test_environment.launch
 ```
+
+This will launch Gazebo and Rviz, and it will start the python and c++ node.
 
 # Packages
 
